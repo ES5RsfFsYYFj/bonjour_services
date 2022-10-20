@@ -163,7 +163,7 @@ impl EventHandler for Handler
                 let is_first_connection = {
 
                     // We acquire the lock just to check is the bot is already connected in a voice channel
-                    // We release it as soon as possible, as to join a channel need to acquire it to, blocking 
+                    // We release it as soon as possible, as the lock is needed to join a channel, blocking 
                     // the access to the voice channel otherwise
                     let handler = handler_lock.lock().await;
                 
